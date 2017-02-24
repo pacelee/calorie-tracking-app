@@ -6,7 +6,7 @@ First run
 `npm install`  
 Followed by
 `bower install`  
-Then build the production files  
+Then build the production files
 `gulp build`  
 Finally run the project on your local server
 `gulp serve`
