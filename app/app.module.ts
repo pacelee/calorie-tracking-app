@@ -7,6 +7,7 @@ import { EditFoodComponent } from './edit-food.component';
 import { NewFoodComponent } from './new-food.component';
 import { CaloriePipe } from './calories.pipe';
 
+
 @NgModule({
   imports: [
     BrowserModule,

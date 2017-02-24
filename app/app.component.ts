@@ -37,18 +37,16 @@ export class AppComponent {
   }
   finishedEditing() {
     this.selectedFood = null;
+
   }
   addFood(newFoodFromChild: Food) {
     this.masterFoodList.push(newFoodFromChild);
   }
-  // lowCalories(){
-  //   for (x = 0; x < this.masterFoodList.length; x++) {
-  //       if (this.masterFoodList[x].calories > 500) {
-  //         this.masterFoodList[x] = null
-  //       }
-  //       else {
-  //         return this.masterFoodList[x];
-  //         console.log(this.masterFoodList[x]);
-  //       }
-  //     };
+
+  // totalCals() {
+  //   this.masterFoodList.reduce((acc,food) =>
+  //     acc = acc + food.calories
+  //     return acc
+  //   ,0)
+  //   }
   };

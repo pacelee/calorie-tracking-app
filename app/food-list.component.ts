@@ -28,4 +28,5 @@ export class FoodListComponent {
   onChange(optionFromMenu) {
   this.selectedCompleteness = optionFromMenu;
   }
+
 }
