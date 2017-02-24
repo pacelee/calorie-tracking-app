@@ -27,8 +27,9 @@ import { Food } from './food.model'
 
 export class AppComponent {
   public masterFoodList: Food[] = [
-    new Food("Hamburger", "Ate it without fries", 400),
+    new Food("Hamburger", "Ate it without fries", 600),
     new Food("BLT Sandwich", "The bacon was quite good", 450),
+    new Food("Barbeque Ribs", "Man they were tender", 800)
   ];
   selectedFood: Food = null;
   showDetails(clickedFood: Food) {
@@ -40,4 +41,14 @@ export class AppComponent {
   addFood(newFoodFromChild: Food) {
     this.masterFoodList.push(newFoodFromChild);
   }
-}
+  // lowCalories(){
+  //   for (x = 0; x < this.masterFoodList.length; x++) {
+  //       if (this.masterFoodList[x].calories > 500) {
+  //         this.masterFoodList[x] = null
+  //       }
+  //       else {
+  //         return this.masterFoodList[x];
+  //         console.log(this.masterFoodList[x]);
+  //       }
+  //     };
+  };

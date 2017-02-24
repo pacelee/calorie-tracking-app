@@ -11,10 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var FoodListComponent = (function () {
     function FoodListComponent() {
+        this.selectedCompleteness = "all";
         this.clickSender = new core_1.EventEmitter();
     }
     FoodListComponent.prototype.editButtonHasBeenClicked = function (FoodToEdit) {
         this.clickSender.emit(FoodToEdit);
+    };
+    FoodListComponent.prototype.onChange = function (optionFromMenu) {
+        this.selectedCompleteness = optionFromMenu;
     };
     __decorate([
         core_1.Input(), 
@@ -27,7 +31,7 @@ var FoodListComponent = (function () {
     FoodListComponent = __decorate([
         core_1.Component({
             selector: 'food-list',
-            template: "\n    <div class=\"pie\" *ngFor=\"let thisFood of childFoodList\">\n      <h3> {{ thisFood.name }} </h3>\n      <p>  Description: {{ thisFood.description}} </p>\n      <p> Calories: {{ thisFood.calories}} </p>\n      <button (click)=\"editButtonHasBeenClicked(thisFood)\">Edit</button>\n    </div>\n  "
+            template: "\n    <select (change)=\"onChange($event.target.value)\">\n    <option value=\"all\">Show All</option>\n    <option value=\"hiCal\">Show High Calorie Meals</option>\n    <option value=\"lowCal\" selected=\"selected\">Show Low Calorie Meals</option>\n    </select>\n    <div class=\"pie\" *ngFor=\"let thisFood of childFoodList | calories:selectedCompleteness\">\n      <h3> {{ thisFood.name }} </h3>\n      <p>  Description: {{ thisFood.description}} </p>\n      <p> Calories: {{ thisFood.calories}} </p>\n      <button (click)=\"editButtonHasBeenClicked(thisFood)\">Edit</button>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], FoodListComponent);
